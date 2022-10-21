@@ -1,0 +1,153 @@
+@import url("https://fonts.googleapis.com/css2?family=Merriweather:wght@300&family=Noto+Serif&family=Nunito:wght@200&family=Oswald:wght@300&display=swap");
+
+/* fonts {
+      font-family: 'Merriweather', serif;
+font-family: 'Noto Serif', serif;
+font-family: 'Nunito', sans-serif;
+font-family: 'Oswald', sans-serif;
+  } */
+
+* {
+  margin: 0;
+  padding: 0;
+  text-align: center;
+  /* word-wrap: break-word; */
+  font-family: "Nunito", sans-serif;
+  transition: all 0.000001s ease-in-out;
+}
+:root {
+  --dark-color: rgb(204, 204, 204);
+  --dark-bg: #000;
+  --light-color: rgb(13, 10, 10);
+  --light-bg: #fff;
+  --mainGdnt: linear-gradient(45deg, #d12525, #ab0ac8, #f82424);
+}
+
+body {
+  width: 100vw;
+  background-image: var(--mainGdnt);
+  background-size: 800%;
+  background-position: right;
+  animation: 25s gradient infinite alternate;
+}
+.container {
+  width: 80vw;
+  height: 90vh;
+  color: var(--dark-color);
+  border: 4px dotted #fff;
+  border-radius: 20px;
+  font-weight: 1000;
+}
+.container .mainArea {
+  width: 100%;
+  font-size: 1.1rem;
+  overflow-x: hidden;
+}
+*::-webkit-scrollbar {
+  width: 15px;
+  height: 15px;
+}
+*::-webkit-scrollbar-track {
+  background: rgb(123, 146, 172);
+  border-radius: 80px;
+}
+.mainArea::-webkit-scrollbar-track {
+  margin-block: 6.5em 1em;
+}
+*::-webkit-scrollbar-thumb {
+  background: hsl(299, 100%, 13%);
+  border-radius: 35px;
+}
+*::-webkit-scrollbar-thumb:hover {
+  background: hsl(300, 18%, 10%);
+}
+a {
+  text-decoration: none;
+  display: inline;
+  cursor: pointer;
+}
+.inputBtns {
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.25);
+  border-radius: 8px;
+  min-height: 80px;
+  padding: 10px;
+}
+.mainArea #inputTxt {
+  min-width: 150px;
+  width: 80%;
+  height: 75vh;
+  color: var(--light-color);
+  font-size: 15px;
+  font-weight: 700;
+  text-align: center;
+  padding-top: 32vh;
+  margin-bottom: 10px;
+  margin-left: 10%;
+  border: 1.5px groove rgb(120, 120, 120);
+  border-radius: 18px;
+  background-color: var(--light-bg);
+  resize: none;
+  outline: none;
+  box-sizing: border-box;
+}
+
+.mainArea #inputTxt::-webkit-scrollbar {
+  display: none;
+}
+
+.mainArea input[type="button"] {
+  min-width: 150px;
+  height: 75px;
+  border: none;
+  cursor: pointer;
+  border-radius: 10px;
+  text-transform: uppercase;
+  font-weight: bolder;
+  font-size: 1.5rem;
+  word-break: break-all;
+  padding: 20px 15px;
+  min-height: 60px;
+  margin: 5px 15px 15px 10px;
+  /* box-shadow: 5px 5px 16px -22px rgba(255, 255, 255, 0.818); */
+
+  background-image: linear-gradient(
+    -45deg,
+    hsl(121, 88%, 43%, 0.75),
+    hsl(60, 94%, 53%, 0.75)
+  );
+  background-clip: text;
+  -webkit-background-clip: text;
+  background-size: 100%;
+  -webkit-background-size: 100%;
+  /* -webkit-background-position: left; */
+  color: transparent;
+
+  box-shadow: inset 0px 0px 0.75px 5px hsla(0, 100%, 50%, 0.755),
+    inset 0px 0px 0.75px 7.5px hsla(0, 0%, 0%, 0.752);
+}
+.optTxt {
+  margin-top: 110px;
+  /* transition: 0.5s margin; */
+}
+
+.optBtns {
+  width: 76%;
+  padding-top: 10px;
+  position: fixed;
+  left: 12%;
+  background-color: rgba(0, 0, 0, 0.25);
+  border-radius: 8px;
+  min-height: 80px;
+  box-sizing: border-box;
+}
+.mainArea input[type="button"]:hover,
+.mainArea input[type="button"]:active {
+  box-shadow: inset 0px 0px 0.75px 2.5px hsla(40, 100%, 50%, 0.756),
+    inset 0px 0px 0.75px 5px hsla(0, 100%, 50%, 0.755),
+    inset 0px 0px 0.75px 7.5px hsla(0, 0%, 0%, 0.752);
+}
+
+.mainArea input[type="button"]:active {
+  border: 1.75px groove transparent;
+}

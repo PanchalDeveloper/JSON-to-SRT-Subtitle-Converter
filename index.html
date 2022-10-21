@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="Auther" content="Mr.AP" />
+    <title>JSON to SRT Subtitle Converter</title>
+    <script src="js/Web Subtitles.js"></script>
+    <script src="js/main js.js"></script>
+
+    <link rel="stylesheet" href="css/animation.css" />
+    <link rel="stylesheet" href="css/stylesheet.css" />
+    <link rel="stylesheet" href="css/utility.css" />
+  </head>
+  <body class="flex fcenter">
+    <header><!-- Header Here --></header>
+    <main>
+      <div class="container flex fsb m1 p1">
+        <!-- <div class="inputArea flex m1 p1">
+        <input
+          type="text"
+          placeholder="Enter Your Json Subtitles Here...\n sdfk"
+        />
+        <input type="button" value="Convert" />
+      </div> -->
+        <div class="mainArea flex fclmn posRel" id="mainArea">
+          <!-- Your Converted Subtitles will be Here... -->
+          <div class="inputBtns flex fsa fclmn">
+            <textarea
+              cols="1"
+              rows="3"
+              id="inputTxt"
+              class="froboto"
+              placeholder='Enter Your JSON Subtitles Here...
+          Example :- 
+          { "from": 0, "to": 1.5, "content": "Hey There !" },
+          { "from": 1.6, "to": 2.0, "content": "This is a Subtitle JSON Formatting" }'
+            >
+            { "from": 0, "to": 8820.98, "content": "hello !" }
+          </textarea
+            >
+            <!-- You Can Change THe Key Values or Put some Input Boxes on the Page to Select/Change Key Values Manuallly-->
+            <input
+              class="cnvrtBtn froboto"
+              id="cnvrtBtn"
+              type="button"
+              value="Convert"
+            />
+          </div>
+        </div>
+      </div>
+    </main>
+    <footer></footer>
+  </body>
+</html>
