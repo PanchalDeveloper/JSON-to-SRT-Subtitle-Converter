@@ -1,65 +1,94 @@
 @import url("https://fonts.googleapis.com/css2?family=Merriweather:wght@300&family=Noto+Serif&family=Nunito:wght@200&family=Oswald:wght@300&display=swap");
 
-/* fonts {
+/* Fonts :-
+
       font-family: 'Merriweather', serif;
 font-family: 'Noto Serif', serif;
 font-family: 'Nunito', sans-serif;
 font-family: 'Oswald', sans-serif;
-  } */
+font-family: 'Dancing Script', cursive;
+font-family: 'Fasthand', cursive;
+font-family: 'Inter', sans-serif;
+font-family: 'Open Sans', sans-serif;
+font-family: 'Quicksand', sans-serif;
+font-family: 'Raleway', sans-serif;
+font-family: 'Roboto Mono', monospace;
+font-family: 'Signika Negative', sans-serif;
+font-family: 'Source Sans Pro', sans-serif; */
 
-* {
-  margin: 0;
-  padding: 0;
-  text-align: center;
-  /* word-wrap: break-word; */
-  font-family: "Nunito", sans-serif;
-  transition: all 0.000001s ease-in-out;
+html {
+  scroll-behavior: smooth;
 }
-:root {
-  --dark-color: rgb(204, 204, 204);
-  --dark-bg: #000;
-  --light-color: rgb(13, 10, 10);
-  --light-bg: #fff;
-  --mainGdnt: linear-gradient(45deg, #d12525, #ab0ac8, #f82424);
-}
-
 body {
   width: 100vw;
-  background-image: var(--mainGdnt);
-  background-size: 800%;
-  background-position: right;
   animation: 25s gradient infinite alternate;
+  overflow-x: hidden;
+  z-index: -100;
 }
-.container {
-  width: 80vw;
-  height: 90vh;
-  color: var(--dark-color);
-  border: 4px dotted #fff;
-  border-radius: 20px;
-  font-weight: 1000;
+
+a {
+  color: inherit;
 }
-.container .mainArea {
+
+main {
+  min-height: 60vh;
+  position: relative;
+}
+section {
+  padding-top: 10vh;
+}
+
+.navbar-brand img {
+  width: 65px;
+  height: 65px;
+  padding: 8px;
+  background-color: var(--bg-grey-1);
+  border: 4px double var(--main-app-font-color);
+  border-radius: var(--def-border-radius);
+}
+.navbar-toggler {
+  display: none;
+  width: 3rem;
+  height: 3rem;
+  background-color: transparent;
+  font-size: 2em;
+  flex-shrink: 0;
+}
+
+ul.navbar-nav {
   width: 100%;
-  font-size: 1.1rem;
+  min-width: fit-content;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: inherit;
+}
+li.nav-item {
+  display: flex;
+  position: relative;
+  list-style: none;
+}
+a.nav-link {
+  min-width: max-content;
+  display: inline-block;
+  cursor: pointer;
+  padding: 1rem;
+  font-family: var(--app-font-family-2);
+  font-size: 1.25rem;
+}
+
+.hero-container {
+  min-height: fit-content;
+  width: 75vw;
+  border: 4px dotted var(--main-app-font-color);
+  border-radius: 20px;
+  color: var(--main-app-dark-color);
+  width: 100%;
+  font-size: var(--app-font-big-1);
   overflow-x: hidden;
 }
-*::-webkit-scrollbar {
-  width: 15px;
-  height: 15px;
-}
-*::-webkit-scrollbar-track {
-  background: rgb(123, 146, 172);
-  border-radius: 80px;
-}
-.mainArea::-webkit-scrollbar-track {
+.hero-container::-webkit-scrollbar-track {
   margin-block: 6.5em 1em;
-}
-*::-webkit-scrollbar-thumb {
-  background: hsl(299, 100%, 13%);
-  border-radius: 35px;
-}
-*::-webkit-scrollbar-thumb:hover {
-  background: hsl(300, 18%, 10%);
 }
 a {
   text-decoration: none;
@@ -73,11 +102,11 @@ a {
   min-height: 80px;
   padding: 10px;
 }
-.mainArea #inputTxt {
+.hero-container #inputTxt {
   min-width: 150px;
   width: 80%;
   height: 75vh;
-  color: var(--light-color);
+  color: var(--main-app-font-color);
   font-size: 15px;
   font-weight: 700;
   text-align: center;
@@ -86,17 +115,17 @@ a {
   margin-left: 10%;
   border: 1.5px groove rgb(120, 120, 120);
   border-radius: 18px;
-  background-color: var(--light-bg);
+  background-color: var(--main-app-color-2);
   resize: none;
   outline: none;
   box-sizing: border-box;
 }
 
-.mainArea #inputTxt::-webkit-scrollbar {
+.hero-container #inputTxt::-webkit-scrollbar {
   display: none;
 }
 
-.mainArea input[type="button"] {
+.hero-container input[type="button"] {
   min-width: 150px;
   height: 75px;
   border: none;
@@ -141,13 +170,13 @@ a {
   min-height: 80px;
   box-sizing: border-box;
 }
-.mainArea input[type="button"]:hover,
-.mainArea input[type="button"]:active {
+.hero-container input[type="button"]:hover,
+.hero-container input[type="button"]:active {
   box-shadow: inset 0px 0px 0.75px 2.5px hsla(40, 100%, 50%, 0.756),
     inset 0px 0px 0.75px 5px hsla(0, 100%, 50%, 0.755),
     inset 0px 0px 0.75px 7.5px hsla(0, 0%, 0%, 0.752);
 }
 
-.mainArea input[type="button"]:active {
+.hero-container input[type="button"]:active {
   border: 1.75px groove transparent;
 }

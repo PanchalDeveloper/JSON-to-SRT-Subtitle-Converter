@@ -1,9 +1,8 @@
-let Subtitles = new Array;
 function initializer() {
-    let inputTxt = document.getElementById("inputTxt"),
+    const inputTxt = document.getElementById("inputTxt"),
         cnvrtBtn = document.getElementById("cnvrtBtn"),
-        mainArea = document.getElementById("mainArea"),
-        mainAreaTxt = "";
+        mainArea = document.getElementById("mainArea");
+    let mainAreaTxt = "";
 
     // Running a funtion when clicking on the "Convert" button
 
@@ -14,7 +13,7 @@ function initializer() {
 
             // Getting values from the input TextArea Box as Objects
 
-            let inArray = inputTxt.value.replace(/\s+|\ +/g,'').replace(/},{|},\n{|}\n,{/gm, "} , {").split(/ , /);
+            let inArray = inputTxt.value.replace(/\s+|\ +/g, '').replace(/},{|},\n{|}\n,{/gm, "} , {").split(/ , /);
 
             inArray.forEach(elem => {
                 Subtitles.push(JSON.parse(elem));
@@ -57,30 +56,6 @@ function initializer() {
                 timeStamps + "<br/>" +
                 dialogue + "<br/><br/>";
         }
-
-        // for ease you can also use this loop like :-
-
-        /*
-        for (let i = 0; i < Subtitles.length; i++) {
-
-            index = (i + 1);
-            
-            pharse = JSON.stringify(Subtitles[i].content);
-            pharse = pharse.replace(/"/gm, "");
-            
-            pharse = pharse.replace(/(\\r|\r|\n|\\n)/g, "<br> ");
-            dialogue = pharse;
-            
-            timeFrom = Subtitles[i].from;
-            timeTo = Subtitles[i].to;
-    
-            timeStamps = calcTime(timeFrom) + " --> " + calcTime(timeTo);
-            
-            mainAreaTxt += index + "<br/>" +
-            timeStamps + "<br/>" +
-            dialogue + "<br/><br/>";
-        }
-        */
 
         // Creating Action Buttons and the Output Area within the Main Output Area
 
@@ -171,7 +146,77 @@ function CopyTxt() {
     optTxt.style.marginTop = "45vh"
 }
 
-// A function to Set Multipule Attributes at once in JS
+// Check for Device Width
+function deviceWidthCheck() {
+    let windowWidth = window.innerWidth;
+    const navbarMenuList = document.getElementById('navbarMenuList');
+    const navMenuBtn = document.getElementById('navMenuBtn');
+
+    if (windowWidth <= 991) {
+        classEdit(navbarMenuList, "add", "hidden");
+        classEdit(navbarMenuList, "remove", "show");
+        classEdit(navMenuBtn, "remove", "lni-close");
+        classEdit(navMenuBtn, "add", "lni-menu");
+    }
+    else {
+        classEdit(navbarMenuList, "add", "show");
+        classEdit(navbarMenuList, "remove", "hidden");
+    }
+}
+
+// Scroll To Given element
+function jumpTo(elem) {
+    let Elem = document.getElementById(elem.id);
+    let position = { top: Elem.offsetTop, left: Elem.offsetLeft, }
+    setTimeout(scrollNow, 300);
+
+    function scrollNow() {
+        winScroll(x = position.left, y = position.top);
+    }
+}
+
+// Hide Element when Window Y-axis scroll is greater than given value
+function checkWinScoll(elem, val) {
+    if (window.scrollY > val) {
+        elem.style.visibility = "visible";
+        elem.style.opacity = "1";
+    }
+    if (window.scrollY <= val) {
+        elem.style.visibility = "hidden";
+        elem.style.opacity = "0";
+    }
+}
+
+// Replace Classes with Given Classes
+function changeClasses(elem_id, classSet_1, classSet_2) {
+
+    const iconBtn = document.getElementById(elem_id);
+    let newClassArr_1 = classSet_1.split(" "),
+        newClassArr_2 = classSet_2.split(" ");
+
+    if (newClassArr_1[0] && newClassArr_2[0]) {
+        newClassArr_2.forEach((_class) => {
+            iconBtn.classList.toggle(_class);
+        });
+
+        newClassArr_1.forEach((_class) => {
+            iconBtn.classList.toggle(_class);
+        });
+    }
+
+}
+
+// Shortand function for Adding/Removing classes in an element 
+function classEdit(elem, methode_ = "add", classes = '') {
+    if (methode_ == "add") {
+        classes.split(' ').forEach((_class) => { elem.classList.add(_class) });
+    }
+    if (methode_ == "remove") {
+        classes.split(' ').forEach((_class) => { elem.classList.remove(_class) });
+    }
+}
+
+// A function to Set Multipule Attributes at once
 
 function setAttributes(elem, attrs) {
     for (var key in attrs) {
@@ -182,15 +227,14 @@ function setAttributes(elem, attrs) {
 // Adding needed "0" before Digits
 
 function fullDigits(i, lnth) {
-    if (i.toString().length < lnth) {
-        while (i.toString().length < lnth) {
-            i = "0" + i;
-        }
-        return i;
+    while (i.toString().length < lnth) {
+        i = "0" + i;
     }
-    else { return i; }
+    return i;
 }
 
-// Run the 'initializer()' function when page loads
-
-window.onload = initializer;
+// Returns '01-09' instead of '1-9'
+function getFullLength(val) {
+    if (val < 10) return 0 + "" + val;
+    else return val;
+}

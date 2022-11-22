@@ -4,53 +4,174 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta name="Auther" content="Mr.AP" />
+    <meta name="Auther" content="PanchalDeveloper" />
     <title>JSON to SRT Subtitle Converter</title>
-    <script src="js/Web Subtitles.js"></script>
-    <script src="js/main js.js"></script>
+    <!-- Favicon IMGs -->
+    <link
+      rel="shortcut icon"
+      href="assets/images/favicon.ico"
+      type="image/x-icon"
+    />
+    <link
+      rel="shortcut icon"
+      type="image/png"
+      sizes="64x64"
+      href="assets/images/favicon-64x64.png"
+      type="image/x-icon"
+    />
+    <link
+      rel="shortcut icon"
+      type="image/png"
+      sizes="16x16"
+      href="assets/images/favicon-16x16.png"
+      type="image/x-icon"
+    />
 
-    <link rel="stylesheet" href="css/animation.css" />
-    <link rel="stylesheet" href="css/stylesheet.css" />
-    <link rel="stylesheet" href="css/utility.css" />
+    <!-- Locale Style Sheets -->
+    <link rel="stylesheet" href="assets/css/utility.css" />
+    <link rel="stylesheet" href="assets/css/predefUtility.css" />
+    <link rel="stylesheet" href="assets/css/stylesheet.css" />
+    <link rel="stylesheet" href="assets/css/animation.css" />
+
+    <!-- Font Icon CDN Style Sheets -->
+    <link rel="stylesheet" href="https://cdn.lineicons.com/3.0/lineicons.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css"
+    />
+
+    <!-- Font Style Sheets -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@500&family=Fasthand&family=Inter&family=Open+Sans&family=Quicksand&family=Raleway&family=Roboto+Mono&family=Signika+Negative:wght@400;700&family=Source+Sans+Pro&display=swap"
+    />
+    <script src="assets/js/docStyling.js"></script>
   </head>
-  <body class="flex fcenter">
-    <header><!-- Header Here --></header>
+  <body>
+    <div id="skipNavigation" class="skipNavigation flex">
+      <a href="#section_1">Skip To Main Content</a>
+    </div>
+    <header id="navHeader" class="app-header p-sticky">
+      <div class="container_fluid">
+        <nav id="navbar" class="navbar navbar-expand-lg px-3 flex j-center">
+          <div class="nav-left flex f-center">
+            <a class="navbar-brand" href="/"
+              ><img
+                src="assets/images/logo_main.png"
+                alt="Logo"
+                title="Logo Main"
+                class="logo-main my-1 mx-2"
+            /></a>
+          </div>
+          <div class="nav-right flex j-end a-center flex-grow-1">
+            <button
+              id="navbarToggler"
+              class="navbar-toggler no-bg"
+              type="button"
+              data-bs-toggle="collapse"
+              data-bs-target="#navbarSupportedContent"
+              aria-controls="navbarSupportedContent"
+              aria-expanded="false"
+              aria-label="Toggle navigation"
+              onclick=" changeClasses('navMenuBtn', 'lni-menu', 'lni-close'), changeClasses('navbarMenuList', 'show', 'hidden')"
+            >
+              <i id="navMenuBtn" class="lni lni-menu"></i>
+            </button>
+            <div
+              id="navbarMenuList"
+              class="collapse navbar-collapse w-100 show"
+              id="navbarSupportedContent"
+            >
+              <ul class="navbar-nav nav-list flex w-100">
+                <li class="nav-item flex flex-SB flex-grow-1">
+                  <ul
+                    class="navbar-nav nav-list-left j-start"
+                    title="Main Navigation Bar."
+                  >
+                    <li class="nav-item flex j-center mr-2" title="Go to Home Page.">
+                      <a
+                        class="nav-link btn f-big-2 f-big-1"
+                        aria-current="page"
+                        href="/"
+                        >Home</a
+                      >
+                    </li>
+                  </ul>
+                  <ul class="navbar-nav nav-list-right j-end">
+                    <li
+                      id="darkModeBtn"
+                      class="dark-mode-btn nav-item flex j-center mr-2"
+                      title="Toggle Dark Mode"
+                    >
+                    <i class="fa-solid fa-moon f-big-3 p-2"></i>
+                    </li>
+                  </ul>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </nav>
+      </div>
+    </header>
     <main>
-      <div class="container flex fsb m1 p1">
-        <!-- <div class="inputArea flex m1 p1">
-        <input
-          type="text"
-          placeholder="Enter Your Json Subtitles Here...\n sdfk"
-        />
-        <input type="button" value="Convert" />
-      </div> -->
-        <div class="mainArea flex fclmn posRel" id="mainArea">
-          <!-- Your Converted Subtitles will be Here... -->
-          <div class="inputBtns flex fsa fclmn">
-            <textarea
-              cols="1"
-              rows="3"
-              id="inputTxt"
-              class="froboto"
-              placeholder='Enter Your JSON Subtitles Here...
+      <section id="section_1">
+        <h1 class="m-4 pl-3">Subtitle Conversion Section</h1>
+        <div class="container mx-auto flex flex-SA">
+          <div class="hero-container flex flex-column pos-rel" id="mainArea">
+            <!-- Your Converted Subtitles will be Here... -->
+            <div class="inputBtns flex flex-SA flex-column">
+              <textarea
+                cols="1"
+                rows="3"
+                id="inputTxt"
+                class="ff-2"
+                placeholder='Enter Your JSON Subtitles Here...
           Example :- 
           { "from": 0, "to": 1.5, "content": "Hey There !" },
           { "from": 1.6, "to": 2.0, "content": "This is a Subtitle JSON Formatting" }'
-            >
+              >
             { "from": 0, "to": 8820.98, "content": "hello !" }
           </textarea
-            >
-            <!-- You Can Change THe Key Values or Put some Input Boxes on the Page to Select/Change Key Values Manuallly-->
-            <input
-              class="cnvrtBtn froboto"
-              id="cnvrtBtn"
-              type="button"
-              value="Convert"
-            />
+              >
+              <!-- You Can Change THe Key Values or Put some Input Boxes on the Page to Select/Change Key Values Manuallly-->
+              <input
+                class="cnvrtBtn ff-2"
+                id="cnvrtBtn"
+                type="button"
+                value="Convert"
+              />
+            </div>
           </div>
         </div>
-      </div>
+      </section>
     </main>
-    <footer></footer>
+    <footer
+      class="app-footer flex flex-SB flex-wrap f-italic p-3"
+      id="appFooter"
+    >
+      <div class="footerLeft flex  flex-even-0 a-center j-start f-small-2 m-2">
+        <div class="footerSocial no-wrap" id="footerSocial">
+          <a href="http://www.facebook.com/#UserProfile" class="p-1"
+            ><span class="lni lni-facebook-filled"></span
+          ></a>
+          <a href="http://twitter.com/#UserProfile" class="p-1"
+            ><span class="lni lni-twitter-original"></span
+          ></a>
+          <a href="http://www.linkedin.com/#UserProfile" class="p-1"
+            ><span class="lni lni-linkedin-original"></span
+          ></a>
+        </div>
+      </div>
+      <div class="footerCopy flex  flex-even-0 a-center j-center f-small-2 m-2">
+        <i>&copy 2022 Copyright: Mr.AP | All Rights Reserved</i>
+      </div>
+      <div class="footerTimer flex flex-even-0 a-center j-end f-small-2 m-2">
+        <small><i class="fa-solid fa-clock"></i> 10:00 AM | 21-Nov-2022</small>
+      </div>
+    </footer>
+    <script src="assets/js/functions.js"></script>
+    <script src="assets/js/script.js"></script>
   </body>
 </html>
