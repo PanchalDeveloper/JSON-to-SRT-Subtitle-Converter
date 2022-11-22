@@ -84,7 +84,7 @@
               class="collapse navbar-collapse w-100 show"
               id="navbarSupportedContent"
             >
-              <ul class="navbar-nav nav-list flex w-100">
+              <ul class="navbar-nav nav-list flex">
                 <li class="nav-item flex flex-SB flex-grow-1">
                   <ul
                     class="navbar-nav nav-list-left j-start"
@@ -102,7 +102,7 @@
                   <ul class="navbar-nav nav-list-right j-end">
                     <li
                       id="darkModeBtn"
-                      class="dark-mode-btn nav-item flex j-center mr-2"
+                      class="dark-mode-btn btn nav-item flex j-center mr-2"
                       title="Toggle Dark Mode"
                     >
                     <i class="fa-solid fa-moon f-big-3 p-2"></i>
@@ -148,10 +148,10 @@
       </section>
     </main>
     <footer
-      class="app-footer flex flex-SB flex-wrap f-italic p-3"
       id="appFooter"
+      class="app-footer flex flex-SA flex-wrap f-italic p-3"
     >
-      <div class="footerLeft flex  flex-even-0 a-center j-start f-small-2 m-2">
+      <div id="footerLeft" class="footerItem flex  flex-grow-1 a-center j-start f-small-1 m-2">
         <div class="footerSocial no-wrap" id="footerSocial">
           <a href="http://www.facebook.com/#UserProfile" class="p-1"
             ><span class="lni lni-facebook-filled"></span
@@ -164,11 +164,11 @@
           ></a>
         </div>
       </div>
-      <div class="footerCopy flex  flex-even-0 a-center j-center f-small-2 m-2">
-        <i>&copy 2022 Copyright: Mr.AP | All Rights Reserved</i>
+      <div id="footerCopy" class="footerItem flex  flex-grow-1 a-center j-center f-small-1 m-2">
+        <span>&copy 2022 Copyright: Mr.AP </span><span>| All Rights Reserved</span>
       </div>
-      <div class="footerTimer flex flex-even-0 a-center j-end f-small-2 m-2">
-        <small><i class="fa-solid fa-clock"></i> 10:00 AM | 21-Nov-2022</small>
+      <div id="footerTimer" class="footerItem flex flex-grow-1 a-center j-end f-small-2 m-2">
+        <span><i class="fa-solid fa-clock"></i> 10:00 AM | 21-Nov-2022</span>
       </div>
     </footer>
     <script src="assets/js/functions.js"></script>

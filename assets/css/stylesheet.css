@@ -1,49 +1,11 @@
 @import url("https://fonts.googleapis.com/css2?family=Merriweather:wght@300&family=Noto+Serif&family=Nunito:wght@200&family=Oswald:wght@300&display=swap");
 
-/* Fonts :-
-
-      font-family: 'Merriweather', serif;
-font-family: 'Noto Serif', serif;
-font-family: 'Nunito', sans-serif;
-font-family: 'Oswald', sans-serif;
-font-family: 'Dancing Script', cursive;
-font-family: 'Fasthand', cursive;
-font-family: 'Inter', sans-serif;
-font-family: 'Open Sans', sans-serif;
-font-family: 'Quicksand', sans-serif;
-font-family: 'Raleway', sans-serif;
-font-family: 'Roboto Mono', monospace;
-font-family: 'Signika Negative', sans-serif;
-font-family: 'Source Sans Pro', sans-serif; */
-
-html {
-  scroll-behavior: smooth;
-}
-body {
-  width: 100vw;
-  animation: 25s gradient infinite alternate;
-  overflow-x: hidden;
-  z-index: -100;
-}
-
-a {
-  color: inherit;
-}
-
-main {
-  min-height: 60vh;
-  position: relative;
-}
-section {
-  padding-top: 10vh;
-}
-
 .navbar-brand img {
   width: 65px;
   height: 65px;
   padding: 8px;
   background-color: var(--bg-grey-1);
-  border: 4px double var(--main-app-font-color);
+  border: 4px double var(--head-foot-font-color);
   border-radius: var(--def-border-radius);
 }
 .navbar-toggler {
