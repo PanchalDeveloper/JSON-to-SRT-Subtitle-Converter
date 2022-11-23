@@ -1,14 +1,14 @@
 :root {
   --main-app-font-color: #1c1c1c;
-  --head-foot-font-color: #834;
   --app-components-color-1: #0064df;
   --app-components-color-2: #3b82f680;
   --main-app-theme-color: #fff;
+  --head-foot-font-color: #834;
+  --head-foot-theme-color: #eee;
   --header-shadow-color: #0003;
   --main-line-height-1: 25px;
   --main-line-height-2: 35px;
   --main-line-height-3: 40px;
-  --head-foot-theme-color: #fafafa;
   --app-font-big-1: 1.2rem;
   --app-font-big-2: 1.4rem;
   --app-font-big-3: 1.6rem;
@@ -27,6 +27,7 @@
   --primary-border-radius: 2em;
   --min-border-radius: 10px;
   --main-shadow-color: #fff7;
+  --btns-in-txt-grad-1: linear-gradient(-45deg, rgb(55, 55, 55), rgb(63, 31, 31));
 
   /* Transitions and Animations */
 
@@ -62,18 +63,19 @@
 
   --scrollbar-size: 10px;
   --scrollbar-gap: 5px;
-  --scrollbar-thumb-border: 2px solid #0003;
-  --scrollbar-track-color: rgb(170, 170, 170);
-  --scrollbar-thumb-color: rgb(88, 88, 88);
-  --scrollbar-thumb-h-color: rgba(0, 0, 0, 0.75);
+  --scrollbar-thumb-border: 2px solid transparent;
+  --scrollbar-track-color: #bdbdbd;
+  --scrollbar-thumb-color: #8d8d8d;
+  --scrollbar-thumb-h-color: rgba(0, 0, 0, 0.5);
 }
 .dark-mode {
   color-scheme: dark;
   --main-app-font-color: #932;
-  --main-app-theme-color: #101;
+  --main-app-theme-color: #0e0c13;
   --head-foot-theme-color: #303;
   --selection-font-color: #2f2f2f;
   --selection-bg-color: #ececec;
+  --btns-in-txt-grad-1: linear-gradient(-45deg, hsl(121, 88%, 43%, 0.75), hsl(60, 94%, 53%, 0.75));
 }
 
 *,
@@ -127,8 +129,10 @@ body {
   z-index: -100;
 }
 
-a {
+a:not(.link) {
   color: inherit;
+  text-decoration: none;
+  cursor: pointer;
 }
 
 main {
@@ -140,11 +144,22 @@ main {
 section {
   padding-block: 8vh;
 }
-.color-scheme-toggler{
-  width: 2.5rem !important;
-  aspect-ratio: 2/1 !important;
-  border-radius: var(--primary-border-radius) !important;
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+.h1,
+.h2,
+.h3,
+.h4,
+.h5,
+.h6 {
+  font-family: var(--app-font-family-4);
 }
+
 .app-header {
   top: 0px;
   left: 0px;
@@ -161,9 +176,6 @@ section {
   color: var(--head-foot-font-color) !important;
   background-color: var(--head-foot-theme-color);
   font-family: var(--app-font-family-2);
-}
-.footerItem > * {
-  min-width: max-content;
 }
 
 .container {

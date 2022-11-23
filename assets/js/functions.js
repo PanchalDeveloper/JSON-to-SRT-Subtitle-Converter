@@ -59,12 +59,13 @@ function initializer() {
 
         // Creating Action Buttons and the Output Area within the Main Output Area
 
-        mainArea.innerHTML = `<div class="optBtns flex fsa">
-                            <input class="froboto " id="copyIt" type="button" value="Copy it">
-                            <input class="froboto" type="button" value="Clear it"  id="clearIt">
+        mainArea.innerHTML = `<div class="optArea sticky">
+                            <div class="optBtns flex flex-SB mx-auto b-t-1">
+                            <input class="froboto " id="copyIt" type="button" value="Copy it" title="Copy coverted subtitles.">
+                            <input class="froboto" type="button" value="Clear it"  id="clearIt" title="Clear coverted subtitles.">
                             </div>`
             +
-            `<div class="optTxt">` + mainAreaTxt + `</div>`;
+            `<div class="optTxt mx-2 my-4 py-2">` + mainAreaTxt + `</div></div>`;
 
         let copyIt = document.querySelector("#copyIt");
         copyIt.addEventListener("click", CopyTxt, false);
@@ -142,8 +143,7 @@ function CopyTxt() {
     cta.select();
     cta.setSelectionRange(0, 99999);
     navigator.clipboard.writeText(cta.value);
-    optTxt.innerHTML = "The text has been Copied to your clipboard.";
-    optTxt.style.marginTop = "45vh"
+    optTxt.innerHTML = "<p class='text-center w-100 my-3'>The text has been Copied to your clipboard.</p>";
 }
 
 // Check for Device Width

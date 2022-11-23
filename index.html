@@ -34,26 +34,26 @@
     <link rel="stylesheet" href="assets/css/animation.css" />
 
     <!-- Font Icon CDN Style Sheets -->
-    <!-- <link rel="stylesheet" href="https://cdn.lineicons.com/3.0/lineicons.css" /> -->
-    <!-- <link
+    <link rel="stylesheet" href="https://cdn.lineicons.com/3.0/lineicons.css" />
+    <link
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css"
-    /> -->
+    />
 
     <!-- Font Style Sheets -->
-    <!-- <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" />
     <link
       rel="stylesheet"
       href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@500&family=Fasthand&family=Inter&family=Open+Sans&family=Quicksand&family=Raleway&family=Roboto+Mono&family=Signika+Negative:wght@400;700&family=Source+Sans+Pro&display=swap"
-    /> -->
+    />
     <script src="assets/js/docStyling.js"></script>
   </head>
   <body>
     <div id="skipNavigation" class="skipNavigation flex">
       <a href="#section_1">Skip To Main Content</a>
     </div>
-    <header id="navHeader" class="app-header p-sticky">
+    <header id="navHeader" class="app-header sticky">
       <div class="container_fluid">
         <nav id="navbar" class="navbar navbar-expand-lg px-3 flex j-center">
           <div class="nav-left flex f-center">
@@ -103,15 +103,18 @@
                     </li>
                   </ul>
                   <ul class="navbar-nav nav-list-right j-end">
-                    <li
-                      class="nav-item flex j-center mr-2"
-                    >
-                      <!-- <i class="fa-solid fa-moon f-big-3 p-2"></i> -->
-                      <input type="checkbox" name="themeTogglerBtn"
+                    <li class="nav-item flex j-center mr-2">
+                      <lable
+                        for="themeTogglerBtn"
+                        class="color-scheme-toggler"
+                      >Dark-Mode</lable>
+                      <input
+                      type="checkbox"
+                      name="themeTogglerBtn"
                       id="themeTogglerBtn"
-                      class="dark-mode-btn color-scheme-toggler b-t-1"
-                      title="Toggle Dark Mode " >
-
+                      class="dark-mode-btn color-scheme-toggler-box relative b-t-1"
+                      title="Toggle Dark Mode "
+                      />
                     </li>
                   </ul>
                 </li>
@@ -125,28 +128,23 @@
       <section id="section_1">
         <h1 class="m-4 pl-3">Subtitle Conversion Section</h1>
         <div class="container mx-auto flex flex-SA">
-          <div class="hero-container flex flex-column pos-rel" id="mainArea">
+          <div class="hero-container relative p-3" id="mainArea">
             <!-- Your Converted Subtitles will be Here... -->
-            <div class="inputBtns flex flex-SA flex-column">
+            <div class="inputArea flex flex-SA f-center flex-column w-100">
               <textarea
-                cols="1"
-                rows="3"
                 id="inputTxt"
-                class="ff-2"
+                class="flex f-center f-big-1 m-2 py-5 px-4"
                 placeholder='Enter Your JSON Subtitles Here...
-          Example :- 
-          { "from": 0, "to": 1.5, "content": "Hey There !" },
-          { "from": 1.6, "to": 2.0, "content": "This is a Subtitle JSON Formatting" }'
-              >
-            { "from": 0, "to": 8820.98, "content": "hello !" }
-          </textarea
+          Example :- { "from": 0, "to": 1.5, "content": "This is a JSON Subtitle Demo" }'
+              >{ "from": 0, "to": 8820.98, "content": "hello !" }</textarea
               >
               <!-- You Can Change THe Key Values or Put some Input Boxes on the Page to Select/Change Key Values Manuallly-->
               <input
-                class="cnvrtBtn ff-2"
+                class="cnvrtBtn"
                 id="cnvrtBtn"
                 type="button"
                 value="Convert"
+                title="Convert Subtitles."
               />
             </div>
           </div>
@@ -155,36 +153,47 @@
     </main>
     <footer
       id="appFooter"
-      class="app-footer flex flex-SA flex-wrap f-italic p-3"
+      class="app-footer relative flex flex-SA flex-wrap f-italic p-5"
     >
       <div
         id="footerLeft"
         class="footerItem flex flex-grow-1 a-center j-start f-small-1 m-2"
       >
-        <div class="footerSocial no-wrap" id="footerSocial">
-          <a href="http://www.facebook.com/#UserProfile" class="p-1"
-            ><span class="lni lni-facebook-filled"></span
-          ></a>
-          <a href="http://twitter.com/#UserProfile" class="p-1"
-            ><span class="lni lni-twitter-original"></span
-          ></a>
-          <a href="http://www.linkedin.com/#UserProfile" class="p-1"
-            ><span class="lni lni-linkedin-original"></span
-          ></a>
+        <div id="footerSocial" class="footerSocial text-left">
+          <h5>Follow me on :-</h5>
+          <ul class="no-list m-2">
+            <li class="social-badges p-1">
+              <a href="http://www.facebook.com/#UserProfile" class="no-f-style p-1"
+                ><span class="lni lni-facebook-filled"></span>
+                Facebook
+              </a>
+            </li>
+            <li class="social-badges p-1">
+              <a href="http://twitter.com/#UserProfile" class="no-f-style p-1"
+                ><span class="lni lni-twitter-original"></span>
+                Twitter
+              </a>
+            </li>
+            <li class="social-badges p-1">
+              <a href="http://www.linkedin.com/#UserProfile" class="no-f-style p-1"
+                ><span class="lni lni-linkedin-original"></span>
+                LinkedIn
+              </a>
+            </li>
+          </ul>
         </div>
       </div>
-      <div
-        id="footerCopy"
-        class="footerItem flex flex-grow-1 a-center j-center f-small-1 m-2"
-      >
-        <span>&copy 2022 Copyright: Mr.AP </span
-        ><span>| All Rights Reserved</span>
-      </div>
-      <div
-        id="footerTimer"
-        class="footerItem flex flex-grow-1 a-center j-end f-small-2 m-2"
-      >
-        <span><i class="fa-solid fa-clock"></i> 10:00 AM | 21-Nov-2022</span>
+      <div id="footerRight" class="footerItem flex flex-grow-1 a-center j-end">
+        <div id="footerCopy" class="footerCopy text-right f-small-1">
+          <span class="w-max m-2"
+            >&copy 2022 Copyright: Mr.AP<br />| All Rights Reserved</span
+          >
+          <div id="footerTimer" class="footerCopy text-right f-small-2">
+            <span class="w-max absolute b-1 r-1 m-2"
+              ><i class="fa-solid fa-clock"></i> 10:00 AM | 21-Nov-2022</span
+            >
+          </div>
+        </div>
       </div>
     </footer>
     <script src="assets/js/functions.js"></script>

@@ -180,6 +180,32 @@
   margin-right: 1.5rem !important;
 }
 
+/* Margin Five */
+
+.m-5,
+.mt-5,
+.my-5 {
+  margin-top: 3rem !important;
+}
+
+.m-5,
+.mb-5,
+.my-5 {
+  margin-bottom: 3rem !important;
+}
+
+.m-5,
+.ml-5,
+.mx-5 {
+  margin-left: 3rem !important;
+}
+
+.m-5,
+.mr-5,
+.mx-5 {
+  margin-right: 3rem !important;
+}
+
 /* Padding Zero */
 
 .p-0,
@@ -310,6 +336,32 @@
   padding-right: 1.5rem !important;
 }
 
+/* Padding Five */
+
+.p-5,
+.pt-5,
+.py-5 {
+  padding-top: 3rem !important;
+}
+
+.p-5,
+.pb-5,
+.py-5 {
+  padding-bottom: 3rem !important;
+}
+
+.p-5,
+.pl-5,
+.px-5 {
+  padding-left: 3rem !important;
+}
+
+.p-5,
+.pr-5,
+.px-5 {
+  padding-right: 3rem !important;
+}
+
 /* Width & Height Styling */
 
 .w-25 {
@@ -385,6 +437,27 @@
 }
 .vh-100 {
   height: 100vh !important;
+}
+
+/* Extra Width/Height Styles */
+
+.w-min {
+  width: min-content !important;
+}
+.w-max {
+  width: max-content !important;
+}
+.w-fit {
+  width: fit-content !important;
+}
+.h-min {
+  height: min-content !important;
+}
+.h-max {
+  height: max-content !important;
+}
+.h-fit {
+  height: fit-content !important;
 }
 
 /* Font Sizes */
@@ -492,25 +565,31 @@
 .f-italic {
   font-style: italic !important;
 }
+.f-underline {
+  text-decoration: underline !important;
+}
+.no-f-style {
+  font-style: normal !important;
+}
 
 /* Positions on Document */
 
-.p-relative {
+.relative {
   position: relative !important;
 }
-.p-absolute {
+.absolute {
   position: absolute !important;
 }
-.p-fixed {
+.fixed {
   position: fixed !important;
 }
-.p-sticky {
+.sticky {
   position: sticky !important;
 }
 
 /* Positions Spacing on Document */
 
-/* Positions Spacing 0 */
+/* Positions Spacing 1 */
 
 .t-0 {
   top: 0px !important;
@@ -523,6 +602,21 @@
 }
 .l-0 {
   left: 0px !important;
+}
+
+/* Positions Spacing 0 */
+
+.t-1 {
+  top: 1em !important;
+}
+.r-1 {
+  right: 1em !important;
+}
+.b-1 {
+  bottom: 1em !important;
+}
+.l-1 {
+  left: 1em !important;
 }
 
 /* Positions Spacing 50 */
@@ -591,6 +685,10 @@ h4 {
 h5 {
   font-size: 1.25rem;
 }
+.h6,
+h6 {
+  font-size: 1rem;
+}
 
 /* Display Styling */
 
@@ -618,28 +716,34 @@ h5 {
 
 /* Flex & Grid Styling */
 
-.flex-grow-0, .flex-even-0{
+.flex-grow-0,
+.flex-even-0 {
   flex-grow: 0 !important;
 }
-.flex-grow-1, .flex-even-1{
+.flex-grow-1,
+.flex-even-1 {
   flex-grow: 1 !important;
 }
 
-.flex-shrink-0, .flex-even-0{
+.flex-shrink-0,
+.flex-even-0 {
   flex-shrink: 0 !important;
 }
-.flex-shrink-1, .flex-even-1{
+.flex-shrink-1,
+.flex-even-1 {
   flex-shrink: 1 !important;
 }
 
-.flex-basis-0, .flex-even-0{
+.flex-basis-0,
+.flex-even-0 {
   flex-basis: 0% !important;
 }
-.flex-basis-1, .flex-even-1{
+.flex-basis-1,
+.flex-even-1 {
   flex-basis: 100% !important;
 }
 
-:has(> :where(.flex-even-0,  .flex-even-1)) {
+:has(> :where(.flex-even-0, .flex-even-1)) {
   display: flex;
 }
 
@@ -811,13 +915,13 @@ h5 {
 
 /* Transparent Color Styling */
 
-.trans-color{
+.trans-color {
   color: transparent !important;
 }
-.trans-bg{
+.trans-bg {
   background-color: transparent !important;
 }
-.trans-border{
+.trans-border {
   border-color: transparent !important;
 }
 
@@ -846,9 +950,8 @@ h5 {
   text-shadow: none !important;
 }
 
-
 /* Temp Properties For Style Checking */
 
-.b-t-1{
+.b-t-1 {
   border: 1px dashed rgb(191, 20, 20) !important;
 }

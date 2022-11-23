@@ -42,45 +42,26 @@ a.nav-link {
 .hero-container {
   min-height: fit-content;
   width: 75vw;
-  border: 4px dotted var(--main-app-font-color);
-  border-radius: 20px;
+  outline: 4px dotted var(--main-app-font-color);
+  border-radius:  var(--min-border-radius);
   color: var(--main-app-dark-color);
   width: 100%;
   font-size: var(--app-font-big-1);
   overflow-x: hidden;
+  box-shadow: 0 0 6px #0007;
 }
 .hero-container::-webkit-scrollbar-track {
   margin-block: 6.5em 1em;
 }
-a {
-  text-decoration: none;
-  display: inline;
-  cursor: pointer;
-}
-.inputBtns {
-  height: 100%;
-  background-color: rgba(0, 0, 0, 0.25);
-  border-radius: 8px;
-  min-height: 80px;
-  padding: 10px;
-}
 .hero-container #inputTxt {
   min-width: 150px;
   width: 80%;
-  height: 75vh;
+  aspect-ratio: 4/3;
   color: var(--main-app-font-color);
-  font-size: 15px;
-  font-weight: 700;
-  text-align: center;
-  padding-top: 32vh;
-  margin-bottom: 10px;
-  margin-left: 10%;
-  border: 1.5px groove rgb(120, 120, 120);
-  border-radius: 18px;
-  background-color: var(--main-app-color-2);
+  border: 8px solid #8885;
+  border-radius:  var(--primary-border-radius);
   resize: none;
-  outline: none;
-  box-sizing: border-box;
+  outline: 2px dotted var(--head-foot-font-color);
 }
 
 .hero-container #inputTxt::-webkit-scrollbar {
@@ -91,54 +72,40 @@ a {
   min-width: 150px;
   height: 75px;
   border: none;
-  cursor: pointer;
-  border-radius: 10px;
+  border-radius:  var(--min-border-radius);
   text-transform: uppercase;
   font-weight: bolder;
-  font-size: 1.5rem;
-  word-break: break-all;
-  padding: 20px 15px;
-  min-height: 60px;
   margin: 5px 15px 15px 10px;
   /* box-shadow: 5px 5px 16px -22px rgba(255, 255, 255, 0.818); */
 
-  background-image: linear-gradient(
-    -45deg,
-    hsl(121, 88%, 43%, 0.75),
-    hsl(60, 94%, 53%, 0.75)
-  );
+  background-image: var(--btns-in-txt-grad-1);
   background-clip: text;
   -webkit-background-clip: text;
+  -moz-background-clip: text;
   background-size: 100%;
   -webkit-background-size: 100%;
+  -moz-background-size: 100%;
   /* -webkit-background-position: left; */
   color: transparent;
 
-  box-shadow: inset 0px 0px 0.75px 5px hsla(0, 100%, 50%, 0.755),
-    inset 0px 0px 0.75px 7.5px hsla(0, 0%, 0%, 0.752);
-}
-.optTxt {
-  margin-top: 110px;
-  /* transition: 0.5s margin; */
+  box-shadow: inset 0px 0px 0.75px 5px hsla(0, 100%, 50%, 0.755);
 }
 
+.optArea {
+  max-height: 75vh;
+  overflow-y: auto;
+}
 .optBtns {
-  width: 76%;
-  padding-top: 10px;
-  position: fixed;
-  left: 12%;
+  top: 10px;
+  width: 80%;
   background-color: rgba(0, 0, 0, 0.25);
-  border-radius: 8px;
+  border-radius:  var(--min-border-radius);
   min-height: 80px;
   box-sizing: border-box;
 }
-.hero-container input[type="button"]:hover,
-.hero-container input[type="button"]:active {
+
+.hero-container input[type="button"]:where(:hover, :active) {
   box-shadow: inset 0px 0px 0.75px 2.5px hsla(40, 100%, 50%, 0.756),
     inset 0px 0px 0.75px 5px hsla(0, 100%, 50%, 0.755),
     inset 0px 0px 0.75px 7.5px hsla(0, 0%, 0%, 0.752);
-}
-
-.hero-container input[type="button"]:active {
-  border: 1.75px groove transparent;
 }
