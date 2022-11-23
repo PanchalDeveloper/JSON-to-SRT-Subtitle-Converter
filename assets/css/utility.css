@@ -24,7 +24,7 @@
   --app-font-family-6: Cambria, Cochin, Georgia, Times, "Times New Roman", serif;
   --app-font-family-cursive: "Dancing Script", cursive;
   --app-footer-font-family: "Inter", sans-serif;
-  --def-border-radius: 2em;
+  --primary-border-radius: 2em;
   --min-border-radius: 10px;
   --main-shadow-color: #fff7;
 
@@ -68,6 +68,7 @@
   --scrollbar-thumb-h-color: rgba(0, 0, 0, 0.75);
 }
 .dark-mode {
+  color-scheme: dark;
   --main-app-font-color: #932;
   --main-app-theme-color: #101;
   --head-foot-theme-color: #303;
@@ -96,12 +97,12 @@
   margin-block: var(--scrollbar-gap);
   margin-inline: var(--scrollbar-gap);
   background: var(--scrollbar-track-color);
-  border-radius: var(--def-border-radius);
+  border-radius: var(--primary-border-radius);
 }
 *::-webkit-scrollbar-thumb {
   border: var(--scrollbar-thumb-border);
   background: var(--scrollbar-thumb-color);
-  border-radius: var(--def-border-radius);
+  border-radius: var(--primary-border-radius);
 }
 *::-webkit-scrollbar-thumb:hover {
   background: var(--scrollbar-thumb-h-color);
@@ -139,7 +140,11 @@ main {
 section {
   padding-block: 8vh;
 }
-
+.color-scheme-toggler{
+  width: 2.5rem !important;
+  aspect-ratio: 2/1 !important;
+  border-radius: var(--primary-border-radius) !important;
+}
 .app-header {
   top: 0px;
   left: 0px;
@@ -313,7 +318,7 @@ section {
 .button,
 button {
   cursor: pointer !important;
-  border-radius: var(--def-border-radius) !important;
+  border-radius: var(--primary-border-radius) !important;
   border: 2px solid transparent;
 }
 

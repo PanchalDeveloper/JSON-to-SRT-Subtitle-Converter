@@ -809,6 +809,18 @@ h5 {
   border-bottom-right-radius: 50% !important;
 }
 
+/* Transparent Color Styling */
+
+.trans-color{
+  color: transparent !important;
+}
+.trans-bg{
+  background-color: transparent !important;
+}
+.trans-border{
+  border-color: transparent !important;
+}
+
 /* Styling with None */
 
 .no-usr-select {

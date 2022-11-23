@@ -6,7 +6,7 @@
   padding: 8px;
   background-color: var(--bg-grey-1);
   border: 4px double var(--head-foot-font-color);
-  border-radius: var(--def-border-radius);
+  border-radius: var(--primary-border-radius);
 }
 .navbar-toggler {
   display: none;

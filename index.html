@@ -28,25 +28,25 @@
     />
 
     <!-- Locale Style Sheets -->
+    <link rel="stylesheet" href="assets/css/BoosterUtility.css" />
     <link rel="stylesheet" href="assets/css/utility.css" />
-    <link rel="stylesheet" href="assets/css/predefUtility.css" />
     <link rel="stylesheet" href="assets/css/stylesheet.css" />
     <link rel="stylesheet" href="assets/css/animation.css" />
 
     <!-- Font Icon CDN Style Sheets -->
-    <link rel="stylesheet" href="https://cdn.lineicons.com/3.0/lineicons.css" />
-    <link
+    <!-- <link rel="stylesheet" href="https://cdn.lineicons.com/3.0/lineicons.css" /> -->
+    <!-- <link
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css"
-    />
+    /> -->
 
     <!-- Font Style Sheets -->
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <!-- <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" />
     <link
       rel="stylesheet"
       href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@500&family=Fasthand&family=Inter&family=Open+Sans&family=Quicksand&family=Raleway&family=Roboto+Mono&family=Signika+Negative:wght@400;700&family=Source+Sans+Pro&display=swap"
-    />
+    /> -->
     <script src="assets/js/docStyling.js"></script>
   </head>
   <body>
@@ -90,7 +90,10 @@
                     class="navbar-nav nav-list-left j-start"
                     title="Main Navigation Bar."
                   >
-                    <li class="nav-item flex j-center mr-2" title="Go to Home Page.">
+                    <li
+                      class="nav-item flex j-center mr-2"
+                      title="Go to Home Page."
+                    >
                       <a
                         class="nav-link btn f-big-2 f-big-1"
                         aria-current="page"
@@ -101,11 +104,14 @@
                   </ul>
                   <ul class="navbar-nav nav-list-right j-end">
                     <li
-                      id="darkModeBtn"
-                      class="dark-mode-btn btn nav-item flex j-center mr-2"
-                      title="Toggle Dark Mode"
+                      class="nav-item flex j-center mr-2"
                     >
-                    <i class="fa-solid fa-moon f-big-3 p-2"></i>
+                      <!-- <i class="fa-solid fa-moon f-big-3 p-2"></i> -->
+                      <input type="checkbox" name="themeTogglerBtn"
+                      id="themeTogglerBtn"
+                      class="dark-mode-btn color-scheme-toggler b-t-1"
+                      title="Toggle Dark Mode " >
+
                     </li>
                   </ul>
                 </li>
@@ -151,7 +157,10 @@
       id="appFooter"
       class="app-footer flex flex-SA flex-wrap f-italic p-3"
     >
-      <div id="footerLeft" class="footerItem flex  flex-grow-1 a-center j-start f-small-1 m-2">
+      <div
+        id="footerLeft"
+        class="footerItem flex flex-grow-1 a-center j-start f-small-1 m-2"
+      >
         <div class="footerSocial no-wrap" id="footerSocial">
           <a href="http://www.facebook.com/#UserProfile" class="p-1"
             ><span class="lni lni-facebook-filled"></span
@@ -164,10 +173,17 @@
           ></a>
         </div>
       </div>
-      <div id="footerCopy" class="footerItem flex  flex-grow-1 a-center j-center f-small-1 m-2">
-        <span>&copy 2022 Copyright: Mr.AP </span><span>| All Rights Reserved</span>
+      <div
+        id="footerCopy"
+        class="footerItem flex flex-grow-1 a-center j-center f-small-1 m-2"
+      >
+        <span>&copy 2022 Copyright: Mr.AP </span
+        ><span>| All Rights Reserved</span>
       </div>
-      <div id="footerTimer" class="footerItem flex flex-grow-1 a-center j-end f-small-2 m-2">
+      <div
+        id="footerTimer"
+        class="footerItem flex flex-grow-1 a-center j-end f-small-2 m-2"
+      >
         <span><i class="fa-solid fa-clock"></i> 10:00 AM | 21-Nov-2022</span>
       </div>
     </footer>
