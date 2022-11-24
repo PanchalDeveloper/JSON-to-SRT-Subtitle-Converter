@@ -444,20 +444,58 @@
 .w-min {
   width: min-content !important;
 }
-.w-max {
-  width: max-content !important;
-}
-.w-fit {
-  width: fit-content !important;
-}
 .h-min {
   height: min-content !important;
+}
+.w-max {
+  width: max-content !important;
 }
 .h-max {
   height: max-content !important;
 }
+.w-fit {
+  width: fit-content !important;
+}
 .h-fit {
   height: fit-content !important;
+}
+
+.min-w-min {
+  min-width: min-content !important;
+}
+.min-h-min {
+  min-height: min-content !important;
+}
+.min-w-max {
+  min-width: max-content !important;
+}
+.min-h-max {
+  min-height: max-content !important;
+}
+.min-w-fit {
+  min-width: fit-content !important;
+}
+.min-h-fit {
+  min-height: fit-content !important;
+}
+
+.max-w-min {
+  max-width: min-content !important;
+}
+.max-h-min {
+  max-height: min-content !important;
+}
+.max-w-max {
+  max-width: max-content !important;
+}
+.max-h-max {
+  max-height: max-content !important;
+}
+.max-w-fit {
+  max-width: fit-content !important;
+}
+.max-h-fit {
+  max-height: fit-content !important;
 }
 
 /* Font Sizes */
@@ -570,6 +608,15 @@
 }
 .no-f-style {
   font-style: normal !important;
+}
+.link {
+  color: #0000ff;
+  cursor: pointer;
+  font-style: italic !important;
+  text-decoration: underline !important;
+}
+.link:where(:hover, :active, :focus, :focus-within) {
+  color: #0000ffa0;
 }
 
 /* Positions on Document */
@@ -950,7 +997,7 @@ h6 {
   text-shadow: none !important;
 }
 
-/* Temp Properties For Style Checking */
+/* Other Style Properties */
 
 .b-t-1 {
   border: 1px dashed rgb(191, 20, 20) !important;

@@ -9,3 +9,12 @@ const themeTogglerBtn = document.getElementById('themeTogglerBtn');
 themeTogglerBtn.addEventListener('change', changeThemeMode);
 
 themeTogglerBtn.checked = checkDarkMode();
+
+// Update Clock-Time
+
+const appClock = document.getElementById('appClock');
+
+let updateClock = setInterval(()=>{
+    let currDate = new Date();
+    appClock.textContent = `${dtFormat.format(currDate)}`
+}, 1000);

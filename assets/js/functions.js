@@ -3,34 +3,43 @@ function initializer() {
         cnvrtBtn = document.getElementById("cnvrtBtn"),
         mainArea = document.getElementById("mainArea");
     let mainAreaTxt = "";
+    Subtitles = [];
 
     // Running a funtion when clicking on the "Convert" button
 
-    cnvrtBtn.addEventListener("click", function () {
+    cnvrtBtn.addEventListener("click", () => {
         if (inputTxt.value != "") {
-
-            Subtitles = [];
-
             // Getting values from the input TextArea Box as Objects
 
-            let inArray = inputTxt.value.replace(/\s+|\ +/g, '').replace(/},{|},\n{|}\n,{/gm, "} , {").split(/ , /);
+            try {
+                let inputArr = inputTxt.value.replace(/\s+|\ +/g, ' ').replace(/}[\s\n]*,[\s\n]*/g, "}@newline").split(/@newline/);
 
-            inArray.forEach(elem => {
-                Subtitles.push(JSON.parse(elem));
-            });
+                inputArr.forEach(elem => {
+                    try {
+                        Subtitles.push(JSON.parse(elem));
+                    } catch {
+                        console.log(`Error occured while converting :- ${elem}`);
+                    }
+                });
 
-            // console.log(Subtitles);
+                convertFormat();
+            }
 
-            convert();
+            catch (error) {
+                // Uncomment it to for Debugging
+
+                // const viewErr = confirm("Your Subtitles does not have the correct syntex ! Please Correct it first or Use diffrent Subtitles.\n\n\t Wanna Check The Problem !?");
+                // if (viewErr) { alert(`Error :-\n\n\t\t ${error.message}`); console.log(error.stack); }
+            }
         }
         else {
-            mainArea.innerHTML = `Please Enter Valid JSON Subtitles <br /><a onclick="location.reload()">Click Here</a> to try again.`;
+            mainArea.innerHTML = `Please Enter Valid JSON Subtitles <br /><a onclick="location.reload()" class='link'>Click Here</a> to try again.`;
         }
     });
 
     // The main function for sub conversion
 
-    function convert() {
+    function convertFormat() {
 
         let index, timeFrom, timeTo, timeStamps = "", dialogue, pharse;
 
@@ -60,12 +69,12 @@ function initializer() {
         // Creating Action Buttons and the Output Area within the Main Output Area
 
         mainArea.innerHTML = `<div class="optArea">
-                            <div class="optBtns sticky flex flex-SB mx-auto b-t-1">
+                            <div class="optBtns sticky flex flex-SA flex-wrap mx-auto min-w-fit b-t-1">
                             <input class="froboto m-2 f-weight-5" id="copyIt" type="button" value="Copy it" title="Copy coverted subtitles.">
                             <input class="froboto  m-2 f-weight-5" type="button" value="Clear it"  id="clearIt" title="Clear coverted subtitles.">
                             </div>`
             +
-            `<div class="optTxt mx-2 my-4 py-2">` + mainAreaTxt + `</div></div>`;
+            `<div class="optTxt mx-2 my-4 py-3">` + mainAreaTxt + `</div></div>`;
 
         let copyIt = document.querySelector("#copyIt");
         copyIt.addEventListener("click", CopyTxt, false);
@@ -94,10 +103,10 @@ function calcTime(time) {
             return ((this.seconds() * 1000) - parseInt(this.seconds()) * 1000);
         }
     }
-    let i = fullDigits(Math.floor(FullTime.hours), 2) + ":" +
-        fullDigits(Math.floor(FullTime.minutes()), 2) + ":" +
-        fullDigits(Math.floor(FullTime.seconds()), 2) + "," +
-        fullDigits(Math.floor(FullTime.milliSeconds()), 3);
+    let i = getFullLength(Math.floor(FullTime.hours), 2) + ":" +
+        getFullLength(Math.floor(FullTime.minutes()), 2) + ":" +
+        getFullLength(Math.floor(FullTime.seconds()), 2) + "," +
+        getFullLength(Math.floor(FullTime.milliSeconds()), 3);
     return i;
 
 }
@@ -105,7 +114,6 @@ function calcTime(time) {
 // A function to copy the DIV text
 
 function CopyTxt() {
-
 
     let OptText = mainArea.innerText;
     let optTxt = document.querySelector(".optTxt");
@@ -176,7 +184,7 @@ function jumpTo(elem) {
 }
 
 // Hide Element when Window Y-axis scroll is greater than given value
-function checkWinScoll(elem, val) {
+function hideOnWinScroll(elem, val) {
     if (window.scrollY > val) {
         elem.style.visibility = "visible";
         elem.style.opacity = "1";
@@ -224,17 +232,23 @@ function setAttributes(elem, attrs) {
     }
 }
 
-// Adding needed "0" before Digits
+// Format Date & Time String
+const dtFormat = new Intl.DateTimeFormat('default', {
+    year: 'numeric',
+    month: 'short',
+    day: '2-digit',
+    weekday: 'short',
+    hour: '2-digit',
+    minute: '2-digit',
+    second: '2-digit',
+    hour12: true,
+});
 
-function fullDigits(i, lnth) {
+// Adding needed numbers of "0" before Digits
+
+function getFullLength(i, lnth) {
     while (i.toString().length < lnth) {
         i = "0" + i;
     }
     return i;
-}
-
-// Returns '01-09' instead of '1-9'
-function getFullLength(val) {
-    if (val < 10) return 0 + "" + val;
-    else return val;
 }

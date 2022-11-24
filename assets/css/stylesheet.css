@@ -5,7 +5,7 @@
   height: 65px;
   padding: 8px;
   background-color: var(--bg-grey-1);
-  border: 4px double var(--head-foot-font-color);
+  border: 4px double var(--header-font-color);
   border-radius: var(--primary-border-radius);
 }
 .navbar-toggler {
@@ -34,7 +34,6 @@ a.nav-link {
   min-width: max-content;
   display: inline-block;
   cursor: pointer;
-  padding: 1rem;
   font-family: var(--app-font-family-2);
   font-size: 1.25rem;
 }
@@ -53,14 +52,14 @@ a.nav-link {
   margin-block: 6.5em 1em;
 }
 .hero-container #inputTxt {
-  min-width: 150px;
+  min-width: 8rem;
   width: 75%;
   aspect-ratio: 3/1;
   color: var(--main-app-font-color);
   border: 8px solid #8885;
   border-radius:  var(--primary-border-radius);
   resize: none;
-  outline: 2px dotted var(--head-foot-font-color);
+  outline: 2px dotted var(--main-app-font-color);
 }
 
 .hero-container #inputTxt::-webkit-scrollbar {
@@ -68,39 +67,41 @@ a.nav-link {
 }
 
 .hero-container input[type="button"] {
+  color: var(--header-font-color);
   min-width: 150px;
   height: 75px;
   border: none;
   border-radius:  var(--min-border-radius);
   text-transform: uppercase;
+  position: relative;
   
-  color: transparent;
+  /* color: transparent;
   background-image: var(--btns-in-txt-grad-1);
   background-clip: text;
   -webkit-background-clip: text;
   -moz-background-clip: text;
   background-size: 100%;
   -webkit-background-size: 100%;
-  -moz-background-size: 100%;
+  -moz-background-size: 100%; */
 
-  box-shadow: inset 0px 0px 0.75px 5px hsla(0, 100%, 50%, 0.755);
+  box-shadow: inset 0px 0px 0.75px 5px var(--header-font-color);
 }
 
 .optArea {
-  max-height: 75vh;
-  overflow-y: auto;
+  max-height: 60vh;
+  overflow: auto;
 }
 .optBtns {
   top: 10px;
   width: 80%;
-  background-color: rgba(0, 0, 0, 0.25);
+  background-color: rgba(0, 0, 0, 0.5);
   border-radius:  var(--min-border-radius);
   min-height: 80px;
   box-sizing: border-box;
 }
 
-.hero-container input[type="button"]:where(:hover, :active) {
-  box-shadow: inset 0px 0px 0.75px 2.5px hsla(40, 100%, 50%, 0.756),
-    inset 0px 0px 0.75px 5px hsla(0, 100%, 50%, 0.755),
-    inset 0px 0px 0.75px 7.5px hsla(0, 0%, 0%, 0.752);
+.hero-container input[type="button"]:where(:hover, :focus, :active) {
+  box-shadow: inset 0px 0px 0.75px 2.5px hsla(40, 100%, 50%, 0.75),
+    inset 0px 0px 0.75px 5px hsla(0, 100%, 50%, 0.75),
+    inset 0px 0px 0.75px 7.5px hsla(0, 0%, 0%, 0.75);
 }

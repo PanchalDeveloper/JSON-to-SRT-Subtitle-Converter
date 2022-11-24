@@ -1,0 +1,16 @@
+{
+    "background_color": "purple",
+    "description": "Converte JSON-Subtitles to SRT-Subtitles.",
+    "display": "fullscreen",
+    "icons": [
+      {
+        "src": "/assets/images/logo_main.png",
+        "sizes": "200x200",
+        "type": "image/png"
+      }
+    ],
+    "name": "AP JSON-SRT Sub Converter",
+    "short_name": "AP Converter",
+    "start_url": "/index.html"
+  }
+  
