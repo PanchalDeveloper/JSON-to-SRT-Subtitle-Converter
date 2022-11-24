@@ -59,10 +59,10 @@ function initializer() {
 
         // Creating Action Buttons and the Output Area within the Main Output Area
 
-        mainArea.innerHTML = `<div class="optArea sticky">
-                            <div class="optBtns flex flex-SB mx-auto b-t-1">
-                            <input class="froboto " id="copyIt" type="button" value="Copy it" title="Copy coverted subtitles.">
-                            <input class="froboto" type="button" value="Clear it"  id="clearIt" title="Clear coverted subtitles.">
+        mainArea.innerHTML = `<div class="optArea">
+                            <div class="optBtns sticky flex flex-SB mx-auto b-t-1">
+                            <input class="froboto m-2 f-weight-5" id="copyIt" type="button" value="Copy it" title="Copy coverted subtitles.">
+                            <input class="froboto  m-2 f-weight-5" type="button" value="Clear it"  id="clearIt" title="Clear coverted subtitles.">
                             </div>`
             +
             `<div class="optTxt mx-2 my-4 py-2">` + mainAreaTxt + `</div></div>`;

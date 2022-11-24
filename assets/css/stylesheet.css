@@ -41,11 +41,10 @@ a.nav-link {
 
 .hero-container {
   min-height: fit-content;
-  width: 75vw;
+  width: 85vw;
   outline: 4px dotted var(--main-app-font-color);
   border-radius:  var(--min-border-radius);
   color: var(--main-app-dark-color);
-  width: 100%;
   font-size: var(--app-font-big-1);
   overflow-x: hidden;
   box-shadow: 0 0 6px #0007;
@@ -55,8 +54,8 @@ a.nav-link {
 }
 .hero-container #inputTxt {
   min-width: 150px;
-  width: 80%;
-  aspect-ratio: 4/3;
+  width: 75%;
+  aspect-ratio: 3/1;
   color: var(--main-app-font-color);
   border: 8px solid #8885;
   border-radius:  var(--primary-border-radius);
@@ -74,10 +73,8 @@ a.nav-link {
   border: none;
   border-radius:  var(--min-border-radius);
   text-transform: uppercase;
-  font-weight: bolder;
-  margin: 5px 15px 15px 10px;
-  /* box-shadow: 5px 5px 16px -22px rgba(255, 255, 255, 0.818); */
-
+  
+  color: transparent;
   background-image: var(--btns-in-txt-grad-1);
   background-clip: text;
   -webkit-background-clip: text;
@@ -85,8 +82,6 @@ a.nav-link {
   background-size: 100%;
   -webkit-background-size: 100%;
   -moz-background-size: 100%;
-  /* -webkit-background-position: left; */
-  color: transparent;
 
   box-shadow: inset 0px 0px 0.75px 5px hsla(0, 100%, 50%, 0.755);
 }
