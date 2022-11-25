@@ -500,14 +500,23 @@
 
 /* Font Sizes */
 
-.f-small-1 {
+.f-small-0 {
   font-size: 1rem !important;
 }
+.f-small-1 {
+  font-size: 0.9rem !important;
+}
 .f-small-2 {
-  font-size: 0.75rem !important;
+  font-size: 0.8rem !important;
 }
 .f-small-3 {
-  font-size: 0.5rem !important;
+  font-size: 0.7rem !important;
+}
+.f-small-4 {
+  font-size: 0.6rem !important;
+}
+.f-big-0 {
+  font-size: 1rem !important;
 }
 .f-big-1 {
   font-size: 1.25rem !important;
@@ -714,7 +723,7 @@
 
 .h1,
 h1 {
-  font-size: 2.5rem;
+  font-size: 2.25rem;
 }
 .h2,
 h2 {

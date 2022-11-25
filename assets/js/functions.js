@@ -11,26 +11,24 @@ function initializer() {
         if (inputTxt.value != "") {
             // Getting values from the input TextArea Box as Objects
 
-            try {
-                let inputArr = inputTxt.value.replace(/\s+|\ +/g, ' ').replace(/}[\s\n]*,[\s\n]*/g, "}@newline").split(/@newline/);
+            let inputArr = inputTxt.value.replace(/\s+|\ +/g, ' ').replace(/}[\s\n]*,[\s\n]*/g, "}@newline").split(/@newline/);
 
-                inputArr.forEach(elem => {
-                    try {
-                        Subtitles.push(JSON.parse(elem));
-                    } catch {
-                        console.log(`Error occured while converting :- ${elem}`);
-                    }
-                });
+            inputArr.forEach(elem => {
+                try {
+                    Subtitles.push(JSON.parse(elem));
+                } catch (err) {
 
-                convertFormat();
-            }
+                    // Uncomment Below Code for Debugging
 
-            catch (error) {
-                // Uncomment it to for Debugging
+                    // const viewErr = sessionStorage.getItem('debug-mode') || confirm("Your Subtitles does not have the correct syntex ! Please Correct it first or Use diffrent Subtitles.\n\n\t Wanna Check The Problem !?");
 
-                // const viewErr = confirm("Your Subtitles does not have the correct syntex ! Please Correct it first or Use diffrent Subtitles.\n\n\t Wanna Check The Problem !?");
-                // if (viewErr) { alert(`Error :-\n\n\t\t ${error.message}`); console.log(error.stack); }
-            }
+                    // sessionStorage.setItem('debug-mode', viewErr);
+
+                    // if ((viewErr === true) || (viewErr === 'true')) { console.log(`Error occured while converting :- ${elem} \n Error :-\n\t\t ${err.name}  => ${err.message}`); }
+                }
+            });
+
+            startConvertion();
         }
         else {
             mainArea.innerHTML = `Please Enter Valid JSON Subtitles <br /><a onclick="location.reload()" class='link'>Click Here</a> to try again.`;
@@ -39,7 +37,7 @@ function initializer() {
 
     // The main function for sub conversion
 
-    function convertFormat() {
+    function startConvertion() {
 
         let index, timeFrom, timeTo, timeStamps = "", dialogue, pharse;
 
@@ -58,8 +56,6 @@ function initializer() {
             timeTo = Subtitles[key].to;
 
             timeStamps = calcTime(timeFrom) + " --> " + calcTime(timeTo);
-
-            console.log(key + "\n" + pharse + "\n" + timeStamps);
 
             mainAreaTxt += index + "<br/>" +
                 timeStamps + "<br/>" +
@@ -116,9 +112,9 @@ function calcTime(time) {
 function CopyTxt() {
 
     let OptText = mainArea.innerText;
-    let optTxt = document.querySelector(".optTxt");
+    let optTxtArea = document.querySelector(".optTxt");
 
-    // creating an hiden inbput-box to put output in it so we can copy it later (here cta means copyTextArea)
+    // creating an hiden inbput-box to put output in it so we can copy it later (here cta reffers to copyTextArea)
 
     const cta = document.createElement("textarea");
 
@@ -142,16 +138,12 @@ function CopyTxt() {
     */
 
     cta.value = OptText;
-    // console.log(cta);    
-
     // Adding cta Element to the Document (it is not Necessary)
-
-    // mainArea.appendChild(cta);
 
     cta.select();
     cta.setSelectionRange(0, 99999);
     navigator.clipboard.writeText(cta.value);
-    optTxt.innerHTML = "<p class='text-center w-100 my-3'>The text has been Copied to your clipboard.</p>";
+    optTxtArea.innerHTML = "<p class='text-center w-100 my-3'>The text has been Copied to your clipboard.</p>";
 }
 
 // Check for Device Width
@@ -195,9 +187,8 @@ function hideOnWinScroll(elem, val) {
     }
 }
 
-// Replace Classes with Given Classes
+// Toggle Element Classes with Given Class-Sets
 function changeClasses(elem_id, classSet_1, classSet_2) {
-
     const iconBtn = document.getElementById(elem_id);
     let newClassArr_1 = classSet_1.split(" "),
         newClassArr_2 = classSet_2.split(" ");
@@ -251,4 +242,11 @@ function getFullLength(i, lnth) {
         i = "0" + i;
     }
     return i;
+}
+
+// Change Toggler Buttons Icon
+
+function changeTogglerIcon(toggleBtn){
+    const label_DS= toggleBtn.nextElementSibling.dataset;
+    (toggleBtn.checked)?(label_DS.icon = label_DS.trueStateIcon):(label_DS.icon = label_DS.falseStateIcon);
 }

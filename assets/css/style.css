@@ -6,14 +6,14 @@
   padding: 8px;
   background-color: var(--bg-grey-1);
   border: 4px double var(--header-font-color);
-  border-radius: var(--primary-border-radius);
+  border-radius: var(--primary-border-radius-2);
 }
 .navbar-toggler {
   display: none;
   width: 3rem;
   height: 3rem;
   background-color: transparent;
-  font-size: 2em;
+  font-size: 1.5em;
   flex-shrink: 0;
 }
 
@@ -42,7 +42,7 @@ a.nav-link {
   min-height: fit-content;
   width: 85vw;
   outline: 4px dotted var(--main-app-font-color);
-  border-radius:  var(--min-border-radius);
+  border-radius: var(--min-border-radius);
   color: var(--main-app-dark-color);
   font-size: var(--app-font-big-1);
   overflow-x: hidden;
@@ -52,14 +52,15 @@ a.nav-link {
   margin-block: 6.5em 1em;
 }
 .hero-container #inputTxt {
-  min-width: 8rem;
   width: 75%;
   aspect-ratio: 3/1;
+  min-height: 130px;
   color: var(--main-app-font-color);
   border: 8px solid #8885;
-  border-radius:  var(--primary-border-radius);
-  resize: none;
+  border-radius: var(--primary-border-radius-1);
   outline: 2px dotted var(--main-app-font-color);
+  padding: 5%;
+  resize: none;
 }
 
 .hero-container #inputTxt::-webkit-scrollbar {
@@ -71,10 +72,10 @@ a.nav-link {
   min-width: 150px;
   height: 75px;
   border: none;
-  border-radius:  var(--min-border-radius);
+  border-radius: var(--min-border-radius);
   text-transform: uppercase;
   position: relative;
-  
+
   /* color: transparent;
   background-image: var(--btns-in-txt-grad-1);
   background-clip: text;
@@ -95,7 +96,7 @@ a.nav-link {
   top: 10px;
   width: 80%;
   background-color: rgba(0, 0, 0, 0.5);
-  border-radius:  var(--min-border-radius);
+  border-radius: var(--min-border-radius);
   min-height: 80px;
   box-sizing: border-box;
 }

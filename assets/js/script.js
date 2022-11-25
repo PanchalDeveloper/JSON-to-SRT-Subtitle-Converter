@@ -5,10 +5,12 @@ let Subtitles = new Array;
 window.onload = initializer;
 
 // Manually Check & Set Color-Schemes 
+
 const themeTogglerBtn = document.getElementById('themeTogglerBtn');
 themeTogglerBtn.addEventListener('change', changeThemeMode);
 
 themeTogglerBtn.checked = checkDarkMode();
+changeTogglerIcon(themeTogglerBtn);
 
 // Update Clock-Time
 

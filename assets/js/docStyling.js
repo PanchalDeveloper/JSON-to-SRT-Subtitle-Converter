@@ -18,6 +18,7 @@ setDarkModeSessionStorage(useDark.matches);
 function toggleDarkMode(state) {
     try {
         themeTogglerBtn.checked = state;
+        changeTogglerIcon(themeTogglerBtn);
     } catch {
         // console.log('Page is loading currently');
     }

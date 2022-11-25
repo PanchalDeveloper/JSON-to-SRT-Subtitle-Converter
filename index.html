@@ -28,10 +28,10 @@
     />
 
     <!-- Locale Style Sheets -->
-    <link rel="stylesheet" href="assets/css/BoosterUtility.css" />
+    <link rel="stylesheet" href="assets/css/booster-utility.css" />
     <link rel="stylesheet" href="assets/css/utility.css" />
-    <link rel="stylesheet" href="assets/css/stylesheet.css" />
-    <link rel="stylesheet" href="assets/css/animation.css" />
+    <link rel="stylesheet" href="assets/css/style.css" />
+    <link rel="stylesheet" href="assets/css/media-query.css" />
 
     <!-- Font Icon CDN Style Sheets -->
     <link rel="stylesheet" href="https://cdn.lineicons.com/3.0/lineicons.css" />
@@ -61,7 +61,7 @@
     <header id="navHeader" class="app-header sticky">
       <div class="container_fluid">
         <nav id="navbar" class="navbar navbar-expand-lg px-3 flex j-center">
-          <div class="nav-left flex f-center">
+          <div class="nav-left flex f-center mr-2">
             <a class="navbar-brand" href="/"
               ><img
                 src="assets/images/logo_main.png"
@@ -75,19 +75,18 @@
               id="navbarToggler"
               class="navbar-toggler no-bg"
               type="button"
-              data-bs-toggle="collapse"
-              data-bs-target="#navbarSupportedContent"
-              aria-controls="navbarSupportedContent"
-              aria-expanded="false"
+              data-bs-toggle="hidden"
+              data-bs-target="#navbarMenuList"
+              aria-controls="primary-navigation"
               aria-label="Toggle navigation"
+              aria-expanded="false"
               onclick=" changeClasses('navMenuBtn', 'lni-menu', 'lni-close'), changeClasses('navbarMenuList', 'show', 'hidden')"
             >
-              <i id="navMenuBtn" class="lni lni-menu"></i>
+              <i id="navMenuBtn" class="lni lni-close"></i>
             </button>
             <div
               id="navbarMenuList"
-              class="collapse navbar-collapse w-100 show"
-              id="navbarSupportedContent"
+              class="navbar-collapse w-100 show"
             >
               <ul class="navbar-nav nav-list flex">
                 <li class="nav-item flex flex-SB flex-grow-1">
@@ -96,11 +95,11 @@
                     title="Main Navigation Bar."
                   >
                     <li
-                      class="nav-item flex j-center mr-2"
+                      class="nav-item flex flex-SA mx-1 p-2"
                       title="Go to Home Page."
                     >
                       <a
-                        class="nav-link btn f-big-2 f-big-1"
+                        class="nav-link btn f-big-1"
                         aria-current="page"
                         href="/"
                         >Home</a
@@ -108,16 +107,22 @@
                     </li>
                   </ul>
                   <ul class="navbar-nav nav-list-right j-end">
-                    <li class="nav-item flex j-center mr-2">Dark-Mode 
+                    <li class="nav-item flex j-center mx-1 p-2">
                       <input
-                      type="checkbox"
-                      name="themeTogglerBtn"
-                      id="themeTogglerBtn"
-                      class="dark-mode-btn toggler-switch-btn d-none b-t-1"
-                      title="Toggle Dark Mode "
+                        type="checkbox"
+                        name="themeTogglerBtn"
+                        id="themeTogglerBtn"
+                        class="dark-mode-btn toggler-switch-btn d-none"
+                        title="Toggle Dark Mode "
                       />
-                      <label for="themeTogglerBtn" class="toggler-switch block relative" title="Toggle Dark Mode."
-                        ></lable>
+                      <label
+                        for="themeTogglerBtn"
+                        class="toggler-switch block relative"
+                        data-icon=""
+                        data-true-state-icon="🌙"
+                        data-false-state-icon="🔆"
+                        title="Toggle Dark Mode."
+                      ></label>
                     </li>
                   </ul>
                 </li>
@@ -127,29 +132,35 @@
         </nav>
       </div>
     </header>
-    <noscript class="w-100"><p class="no-js-support text-center f-big-1 f-weight-3 mx-5 my-2 p-3 br-2">Your Browser doesn't support/has disabled JavaScript ! Please Enable/use other Browser for this Site to Work properly.</p></noscript>
+    <noscript class="w-100"
+      ><p
+        class="no-js-support text-center f-big-1 f-weight-3 mx-5 my-2 p-3 br-2"
+      >
+        Your Browser doesn't support/has disabled JavaScript ! Please Enable/use
+        other Browser for this Site to Work properly.
+      </p></noscript
+    >
     <main>
       <section id="section_1">
-        <h1 class="m-4 pl-3">Subtitle Conversion Section</h1>
+        <h1 class="m-4 pl-3">Subtitle Convertion Section</h1>
         <div class="container mx-auto flex flex-SA">
           <div class="hero-container relative p-3" id="mainArea">
             <!-- Your Converted Subtitles will be Here... -->
             <div class="inputArea flex flex-SA f-center flex-column w-100">
               <textarea
                 id="inputTxt"
-                class="flex f-center f-big-1 lh-1 m-2 py-5 px-4"
+                class="flex f-center no-wrap f-big-0 lh-1 m-2 px-4"
                 placeholder='Enter Your JSON Subtitles Here...
           Example :- { "from": 0, "to": 1.5, "content": "This is a JSON Subtitle Demo" }'
               >
-              { "from": 0, "to": 3482, "content": "Hello There! This is a Demo With Life-Quotes." },
-              { "from": 3482, "to": 4595, "content": "Spread love everywhere you go. Let no one ever come to you without leaving happier. -Mother Teresa" },
-              { "from": 4595, "to": 6925.56, "content": "When you reach the end of your rope, tie a knot in it and hang on. -Franklin D. Roosevelt" },
-              { "from": 6925.56, "to": 7950.82, "content": "Always remember that you are absolutely unique. Just like everyone else. -Margaret Mead" },
-              { "from": 7950.82, "to": 8820.98, "content": "Don't judge each day by the harvest you reap but by the seeds that you plant. -Robert Louis Stevenson" },
-              { "from": 8820.98, "to": 8956, "content": "The future belongs to those who believe in the beauty of their dreams. -Eleanor Roosevelt" },
-              { "from": 8956, "to": 9015, "content": "End of the Demo" }
-              </textarea
-              >
+{ "from": 0, "to": 3482, "content": "Hello There! This is a Demo With Life-Quotes." },
+{ "from": 3482, "to": 4595, "content": "Spread love everywhere you go. Let no one ever come to you without leaving happier. -Mother Teresa" },
+{ "from": 4595, "to": 6925.56, "content": "When you reach the end of your rope, tie a knot in it and hang on. -Franklin D. Roosevelt" },
+{ "from": 6925.56, "to": 7950.82, "content": "Always remember that you are absolutely unique. Just like everyone else. -Margaret Mead" },
+{ "from": 7950.82, "to": 8820.98, "content": "Don't judge each day by the harvest you reap but by the seeds that you plant. -Robert Louis Stevenson" },
+{ "from": 8820.98, "to": 8956, "content": "The future belongs to those who believe in the beauty of their dreams. -Eleanor Roosevelt" },
+{ "from": 8956, "to": 9015, "content": "End of the Demo" }
+              </textarea>
               <!-- You Can Change THe Key Values or Put some Input Boxes on the Page to Select/Change Key Values Manuallly-->
               <input
                 class="cnvrtBtn f-weight-5"
@@ -169,44 +180,60 @@
     >
       <div
         id="footerLeft"
-        class="footerItem flex flex-grow-1 a-center j-start f-small-1 m-2"
+        class="footerItem flex flex-grow-1 a-center j-start f-small-3 m-2"
       >
-        <div id="footerSocial" class="footerSocial text-left">
-          <h5><i>Follow me on :-</i></h5>
-          <ul class="no-list m-2">
-            <li class="social-badges p-1">
+        <div id="footerSocial" class="footerSocial media-f-center media-text-center">
+          <h6><i>Follow me on</i></h6>
+          <ul class="media-flex no-list p-2">
+            <li class="social-badges no-wrap p-1">
               <a
-                href="http://www.facebook.com/#UserProfile"
+                href="http://www.facebook.com/PanchalDevloper"
+                target="_blank"
                 class="p-1"
                 ><span class="lni lni-facebook-filled"></span>
                 Facebook
               </a>
             </li>
-            <li class="social-badges p-1">
-              <a href="http://twitter.com/#UserProfile" class="p-1"
+            <li class="social-badges no-wrap p-1">
+              <a
+                href="http://twitter.com/PanchalDevloper"
+                target="_blank"
+                class="p-1"
                 ><span class="lni lni-twitter-original"></span>
                 Twitter
               </a>
             </li>
-            <li class="social-badges p-1">
+            <li class="social-badges no-wrap p-1">
               <a
-                href="http://www.linkedin.com/#UserProfile"
+                href="http://www.linkedin.com/panchal-devloper"
+                target="_blank"
                 class="p-1"
                 ><span class="lni lni-linkedin-original"></span>
                 LinkedIn
               </a>
             </li>
+            <li class="social-badges no-wrap p-1">
+              <a
+                href="https://stackoverflow.com/u/20530552"
+                target="_blank"
+                class="p-1"
+                ><span class="lni lni-stackoverflow"></span>
+                Stack Overflow
+              </a>
+            </li>
           </ul>
         </div>
       </div>
-      <div id="footerRight" class="footerItem flex flex-grow-1 a-center j-end">
-        <div id="footerCopy" class="footerCopy text-right f-small-1">
-          <i class="min-w-max m-2"
-            >&copy 2022 Copyright: Panchal Developer<br />| All Rights Reserved</i
+      <div id="footerRight" class="footerItem flex flex-grow-1 j-end media-text-center media-f-center m-2">
+        <div id="footerCopy" class="footerCopy text-right f-small-2">
+          <i class="min-w-max media-text-center p-1"
+            ><span class="copyIcon f-big-1">&copy</span> 2022 Copyright: <span class="authName no-wrap">Panchal Developer</span><br />| All Rights
+            Reserved</i
           >
-          <div id="footerTimer" class="footerCopy text-right f-small-2">
+          <div id="footerTimer" class="footerCopy text-right f-small-3">
             <span class="w-max absolute b-1 r-1 m-2"
-              ><i class="fa-solid fa-clock"></i> <i id="appClock">10:00 AM | 21-Nov-2022</i></span
+              ><i class="fa-solid fa-clock"></i>
+              <i id="appClock">12:00 AM | 01-Jan-2022</i></span
             >
           </div>
         </div>
